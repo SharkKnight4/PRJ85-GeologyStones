@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>Geologystones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+</head>
+<body>
+    <center>
+<h1 id="header">Geologystones</h1>
+<br>
+<br>
+<h2 id="disc">Press A for Amethist, B for Bixbite, C for copper, D for Diamond and E for Emerald</h2>
+<br>
+<br>
+<br>
+<canvas id="myCanvas" ></canvas>
+</center>
+<script>
+    canvas = document.getElementById('myCanvas');
+ctx = canvas.getContext("2d");
+amethist_width = 60;
+amethist_height = 40;
+amethist_image = "amethist.png";
+amethist_x = 10;
+amethist_y = 50;
+
+bixbite_width = 40;
+bixbite_height = 30;
+bixbite_image = "bixbite.png";
+bixbite_x = 70;
+bixbite_y = 50;
+
+copper_width = 40;
+copper_height = 30;
+copper_image = "rawcopper.png";
+copper_x = 120;
+copper_y = 50;
+
+diamond_width = 40;
+diamond_height = 30;
+diamond_image = "diamond.png";
+diamond_x = 170;
+diamond_y = 50;
+
+emerald_width = 40;
+emerald_height = 30;
+emerald_image = "Emerald_Lab_Chatham_Oct_Gem.png";
+emerald_x = 225;
+emerald_y = 50;
+
+amethist_imgTag = new Image(); //defining a variable with a new image
+amethist_imgTag.src = amethist_image;   // load image
+
+bixbite_imgTag = new Image(); //defining a variable with a new image
+bixbite_imgTag.src = bixbite_image;   // load image
+
+copper_imgTag = new Image(); //defining a variable with a new image
+copper_imgTag.src = copper_image;   // load image
+
+diamond_imgTag = new Image(); //defining a variable with a new image
+diamond_imgTag.src = diamond_image;   // load image
+
+emerald_imgTag = new Image(); //defining a variable with a new image
+emerald_imgTag.src = emerald_image;   // load image
+    
+window.addEventListener("keydown", my_keydown);
+
+function my_keydown(e)
+{
+	keyPressed = e.keyCode;
+	console.log(keyPressed);
+		if(keyPressed == '65')
+		{
+			uploadamethist();
+			console.log("Uploaded Amethist");
+		}
+		if(keyPressed == '66')
+		{
+			uploadbixbite();
+			console.log("Uploaded Bixbite");
+		}
+		if(keyPressed == '67')
+		{
+			uploadcopper();
+			console.log("uploading raw copper");
+		}
+		if(keyPressed == '68')
+		{
+			uploaddiamond();
+			console.log("Upload Diamonds");
+		}
+		if(keyPressed == '69')
+		{
+			uploademerald();
+			console.log("uploaded emerald");
+		}
+function uploadamethist() {
+	ctx.drawImage(amethist_imgTag, amethist_x, amethist_y, amethist_width, amethist_height);
+}
+function uploadbixbite() {
+	ctx.drawImage(bixbite_imgTag, bixbite_x, bixbite_y, bixbite_width, bixbite_height);
+}
+function uploadcopper() {
+	ctx.drawImage(copper_imgTag, copper_x, copper_y, copper_width, copper_height);
+}
+function uploaddiamond() {
+	ctx.drawImage(diamond_imgTag, diamond_x, diamond_y, diamond_width, diamond_height);
+}
+function uploademerald() {
+	ctx.drawImage(emerald_imgTag, emerald_x, emerald_y, emerald_width, emerald_height);
+}
+}
+</script>
+<style>
+    body{
+        background-image: url("magmabackground.jpg");
+        color: whitesmoke;
+    }
+    h1{
+        font-family: 'New Rocker', cursive;
+        font-size: 100px;
+    }
+    h2{
+        font-family: 'Rock Salt', cursive;
+        font-size:medium;
+    }
+    canvas{
+        background-image:url("https://wallpapercave.com/wp/wp2668809.jpg") ;
+        height: 800;
+        width: 1200;
+    }
+</style>
+</body>
+</html>
